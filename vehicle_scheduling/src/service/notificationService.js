@@ -36,7 +36,7 @@ const getTopNotifications = async (topN = 10) => {
 
   // Score each notification
   const scored = notifications.map((n, index) => {
-    const typeWeight = WEIGHT[n.notification_type?.toLowerCase()] || 1;
+   const typeWeight = WEIGHT[n.Type?.toLowerCase()] || 1;
     const recencyScore = notifications.length - index;
     const finalScore = typeWeight * 1000 + recencyScore;
     return { ...n, finalScore };
